@@ -1,10 +1,11 @@
 import React from 'react'
+import formatCurrency from './util'
 
 
 function Cart({cartItems, removeFromCart}) {
     
-    console.log(cartItems.length)
-    console.log(cartItems)
+    // console.log(cartItems.length)
+    // console.log(cartItems)
     return (
       <div className='cart'>
           {cartItems.length === 0 ? (
@@ -25,9 +26,9 @@ function Cart({cartItems, removeFromCart}) {
                                 <img src={item.image} alt={item.title}></img>
                             </div>
                             <div>
-                                <div>{item.image}</div>
+                                
                                 <div className='right'>
-                                    {item.price} x {item.count} {" "}
+                                {formatCurrency(item.price)} x {item.count} {" "}
                                     <button className='button' onClick={() =>removeFromCart(item)}>
                                         Remove
                                     </button>
