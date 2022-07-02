@@ -2,18 +2,18 @@
 import Header from './Header';
 import data from './data.json'
 import Products from './Products';
-// import Filter from './Filter';
 import Cart from './Cart';
 import { useState } from 'react';
 import Footer from './Footer';
-//import { BrowserRouter as Router, Route, Switch } from 'react-router';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Cctv from './Cctv';
 import Inverters from './Inverters'
+import Batteries from './Batteries';
+
+
 
 function App() {
-  // const [sort, setSort] = useState('')
-  // const [size, setSize] = useState('')
+  
   const [products, setProduct] = useState(data.products)
   const  [cartItems, setCartItems] = useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],)
 
@@ -72,10 +72,16 @@ function App() {
         <Route path='/cctv'>
           <Cctv products={products}/>    
         </Route>
-
+        
         <Route path='/inverters'>
           <Inverters products={products}/>
         </Route>
+
+        <Route path='/batteries'>
+          <Batteries products={products}/>
+        </Route>
+        
+        
         </Switch> 
         
       </header> 
