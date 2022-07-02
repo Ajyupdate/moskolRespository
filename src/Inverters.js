@@ -1,11 +1,13 @@
-import React from 'react'
+
+import Template from './Template'
 
 function Inverters({products}) {
-    const filteredProduct = products.filter((product) => product.title === "Inverters")
     
   return (
-    <div>
-        
+    
+    <div className='cctv'>
+    
+        <Template products={products} title="Inverters"/>
     </div>
   )
 }

@@ -34,7 +34,7 @@ function Header({products, addToCart}) {
                     <p><a href='/'>Home</a></p>
                     <p><a href='/cctv'>CCTV</a></p>
                     <p><a href='/inverters'>Inverters</a></p>
-                    <p><a href='/'>Batteries</a></p>
+                    <p><a href='/batteries'>Batteries</a></p>
                 </div>
             </div>
 
