@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import Zoom from 'react-reveal/Zoom'
+import Cart from './Cart'
 import formatCurrency from './util'
 
 
@@ -9,6 +10,7 @@ function Products({products, addToCart}) {
     return product 
   })
   const [product, setProduct] = useState(null)
+  const [cartModal, setCartModal] = useState(null)
   
   const openModal = (product) =>{
     setProduct(product)
@@ -16,6 +18,14 @@ function Products({products, addToCart}) {
   const closeModal = () =>{
     setProduct( null);
   }  
+  const closeOrder = () =>{
+    setCartModal( null);
+  }  
+  
+  const createOrder = (product) =>{
+    //(product.title + " has been added to your cart" )
+    setCartModal(product)
+  }
   
   return (
     <div className="product">
@@ -83,6 +93,7 @@ function Products({products, addToCart}) {
                             <button className='button primary'
                                 onClick={() => {
                                     addToCart(product);
+                                    createOrder(product)
                                     closeModal();
                                 }}
                             >
@@ -93,6 +104,20 @@ function Products({products, addToCart}) {
                 </div>
             </Zoom>
         </Modal>
+    )}
+    
+    {cartModal && (
+      <Modal  isOpen={true} onRequestClose={closeOrder}>
+      <Zoom >
+          <button className='close-modal' onClick={closeOrder}>
+              X
+          </button>
+          <h2>Your order has been added to your cart check it out here</h2>
+          {/* <Cart/>  */}
+         
+      </Zoom>
+      </Modal>
+
     )}
       
 

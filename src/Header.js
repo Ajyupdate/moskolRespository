@@ -32,9 +32,9 @@ function Header({products, addToCart}) {
             <div className="header-list">
                 <div>
                     <p><a href='/'>Home</a></p>
-                    <p><a href='/'>CCTV</a></p>
-                    <p><a href='/'>Inverters</a></p>
-                    <p><a href='/'>Decoders</a></p>
+                    <p><a href='/cctv'>CCTV</a></p>
+                    <p><a href='/inverters'>Inverters</a></p>
+                    <p><a href='/'>Batteries</a></p>
                 </div>
             </div>
 
@@ -43,13 +43,7 @@ function Header({products, addToCart}) {
             </div>
         </div>
 
-        {/* {products.map((product) =>(
-            <div>
-                <h6>NEW PRODUCT</h6>
-                {product.title[0]}
-                {product._id[0]}
-            </div>
-        ))}       */}
+        
 
         <div className='first-product-div'>
             {first.map((product) =>(

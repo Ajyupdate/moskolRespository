@@ -3,22 +3,25 @@ import Header from './Header';
 import data from './data.json'
 import Products from './Products';
 // import Filter from './Filter';
-// import Cart from './Cart';
+import Cart from './Cart';
 import { useState } from 'react';
 import Footer from './Footer';
-
-
+//import { BrowserRouter as Router, Route, Switch } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Cctv from './Cctv';
+import Inverters from './Inverters'
 
 function App() {
   // const [sort, setSort] = useState('')
   // const [size, setSize] = useState('')
   const [products, setProduct] = useState(data.products)
-  const  [cartItems, setCartItems] = useState([])
+  const  [cartItems, setCartItems] = useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],)
 
-  // function removeFromCart(product){
-  //   const cartItemss = cartItems.slice
-  //   setCartItems({cartItemss: cartItemss.filter((x) => x._id !== product._id)})
-  // }
+  function removeFromCart(product){
+    const cartItemss = cartItems.slice()
+    setCartItems(cartItemss.filter((x) => x._id !== product._id))
+    localStorage.setItem("cartItemss", JSON.stringify(cartItemss.filter((x) => x._id !== product._id)))
+  }
  
   const addToCart = (product) => {
     
@@ -36,58 +39,50 @@ function App() {
       cartItemss.push({...product, count: 1})
     }
     setCartItems(cartItemss)
-    
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }
   
   
-  // function sortProducts(e){
-  //   console.log(e.target.value)
-  //   const sort = e.target.value;
-  //   setSort(sort)
-  //   setProduct(products
-  //     .slice()
-  //     .sort((a,b) => 
-  //       sort === "lowest"
-  //         ? a.price > b.price
-  //           ? 1
-  //           : -1
-  //         : sort === "highest"
-  //         ? a.price < b.price
-  //           ? 1
-  //           : -1
-  //         : a._id < b._id
-  //         ? 1
-  //           : -1 
-  //       )   
-  //   )
-
-  // }
-
-  // function filterProducts(e){
-  //   console.log(e.target.value)
-  //   if(e.target.value === ""){
-  //     setSize(e.target.value)
-  //     setProduct(data.products)
-  //   }else{
-  //     setSize(e.target.value)
-  //     setProduct(data.products.filter(
-  //       (product) => product.availableSizes.indexOf(e.target.value) >= 0
-  //     ))
-  //   }
-    
-  // }
+  
 
   return (
+    <Router>
     <div className="App" > 
       <header>
+        <Switch> 
         {/* <Filter filterProducts={filterProducts} sortProducts={sortProducts} size={size} sort={sort} count={products.length}/> */}
-        <Header products={products} addToCart={addToCart}/>
-        <Products products={products} addToCart={addToCart}/> 
+        <Route exact path="/"> 
+          <Header products={products} addToCart={addToCart}/>
+        
+        
+        <Products products={products} addToCart={addToCart}/>
+
+        
+        <Route path='/cctv'>
+        <Cctv products={products}/>    
+        </Route>  
+        
         <Footer/>
+        </Route> 
+
+        <Route path='/cart'>
+          <Cart removeFromCart={removeFromCart} cartItems={cartItems}/>    
+        </Route>
+
+        <Route path='/cctv'>
+          <Cctv products={products}/>    
+        </Route>
+
+        <Route path='/inverters'>
+          <Inverters products={products}/>
+        </Route>
+        </Switch> 
+        
       </header> 
       
-      {/* <Cart removeFromCart={removeFromCart} cartItems={cartItems}/>    */}
+      
     </div>
+    </Router>
   );
 }
 
