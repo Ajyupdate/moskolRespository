@@ -1,21 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Fade } from 'react-reveal'
+//import { useHistory } from 'react-router-dom'
 import formatCurrency from './util'
 
 
-function Cart({cartItems, removeFromCart}) {
+function Cart({cartItems, createOrder, removeFromCart}) {
+
+    const [showCheckout, setShowCheckOut] = useState(false)
+    const [name, setName] = useState("")
     
-    // console.log(cartItems.length)
-    // console.log(cartItems)
+    const email = ""
+    const address = ""
+
+    //const history = useHistory()
+    const handleInput = (e) =>{
+        setName(e.target.value)
+    }
+
+    const createOrderr = (e) =>{
+        console.log(e.target.value)
+        const order =  {
+            name: name,
+            email: email,
+            address: address,
+            cartItems: cartItems
+        }
+        createOrder(order)
+    }
     return (
       <div className='cart'>
-          {cartItems.length === 0 ? (
-              <div className='cart cart-header'>Cart is empty</div>
-          ) : (
-              <div className='cart cart-header'>
-                  You have {cartItems.length} in the cart {" "}
-              </div>
-          )
-          }
+        {cartItems.length === 0 ? (
+            <div className='cart cart-header'>Cart is empty</div>
+        ) : (
+            <div className='cart cart-header'>
+                You have {cartItems.length} in the cart {" "}
+            </div>
+        )
+        }
 
           <div>
             <div>
@@ -37,7 +58,55 @@ function Cart({cartItems, removeFromCart}) {
                         </li>
                     ))}
                 </ul>
-            </div>            
+            </div>  
+
+            {cartItems.length !== 0 && (
+                <div>
+                    <div>
+                        <div className='cart'>
+                            <div className='total'>
+                                <div>
+                                    Total: {}
+                                    {formatCurrency(cartItems.reduce((a, c) => a + c.price * c.count, 0))}
+                                </div>
+                                <button
+                                onClick={() => {
+                                    setShowCheckOut(true)
+                                }} className="button primary">
+                                    Proceed
+                                </button>
+                            </div>
+                        </div>
+
+                        {showCheckout && (
+                            <Fade right cascade>
+                                <div className='cart'>
+                                    <form onSubmit={createOrderr}>
+                                        <ul className='form-container'>
+                                            <li>
+                                                <label>Email</label>
+                                                <input name='email' type='email' required onChange={handleInput}></input>
+                                            </li>
+
+                                            <li>
+                                                <label>Name</label>
+                                                <input name='name' type='text' required onChange={handleInput}></input>
+                                            </li>
+
+                                            <li>
+                                                <label>Address</label>
+                                                <input name='address' type='text' required onChange={handleInput}></input>
+                                            </li>
+
+                                            <button className='button primary' type='submit'>Checkout</button>
+                                        </ul>
+                                    </form>
+                                </div>
+                            </Fade>
+                        )}
+                    </div>
+                </div>
+            )}          
           </div> 
       </div>
     )
