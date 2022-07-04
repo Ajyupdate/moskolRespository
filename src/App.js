@@ -15,12 +15,15 @@ import Batteries from './Batteries';
 function App() {
   
   const [products, setProduct] = useState(data.products)
-  const  [cartItems, setCartItems] = useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],)
+  const  [cartItems, setCartItems] = useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [])
 
   function removeFromCart(product){
     const cartItemss = cartItems.slice()
-    setCartItems(cartItemss.filter((x) => x._id !== product._id))
-    localStorage.setItem("cartItemss", JSON.stringify(cartItemss.filter((x) => x._id !== product._id)))
+    setCartItems(
+      cartItems.filter((x) => x._id !== product._id)
+    )
+    //setCartItems(cartItemss.filter((x) => x._id !== product._id))
+    localStorage.setItem("cartItems", JSON.stringify(cartItemss.filter((x) => x._id !== product._id)))
   }
  
   const addToCart = (product) => {
@@ -32,7 +35,7 @@ function App() {
     cartItemss.forEach((item) =>{
       if(item._id === product._id){
         item.count++;
-        alreadyInCart= true;
+        alreadyInCart = true;
       }
     });
     if(!alreadyInCart){
@@ -56,11 +59,8 @@ function App() {
         
         
         <Products products={products} addToCart={addToCart}/>
-
-        
-        <Route path='/cctv'>
-        <Cctv products={products}/>    
-        </Route>  
+       
+        <Cart removeFromCart={removeFromCart} cartItems={cartItems}/>  
         
         <Footer/>
         </Route> 

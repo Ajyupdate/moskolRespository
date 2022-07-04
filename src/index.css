@@ -194,3 +194,30 @@ a{
 .cctv{
   background-color: red;
 }
+
+.Batteriescard  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(216, 124, 73);
+}
+.Panelcard{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(241, 241, 241);
+}
+.Smartgatecard{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.before-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+  margin: auto;
+  max-width: 50em;
+}
+.before-footer img{
+  width: 11em;
+}

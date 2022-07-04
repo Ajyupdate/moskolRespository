@@ -9,6 +9,10 @@ function Products({products, addToCart}) {
   var firstThreeProduct = products.slice(0,3).map((product) => {
     return product 
   })
+  var lastThreeProduct = products.slice(2,5).map((product) => {
+    return product 
+  })
+
   const [product, setProduct] = useState(null)
   const [cartModal, setCartModal] = useState(null)
   
@@ -33,11 +37,11 @@ function Products({products, addToCart}) {
           {firstThreeProduct.map((product) =>(
             <li key={product._id}>
               <div className='single-product'>
-                <a href='/'>
+                <a href={product.title}>
                   <img src={product.image} alt="product list"/>
                   <div className="title-and-shop">
                     <h3>{product.title}</h3>
-                    <h6 onClick={() => addToCart(product)}>shop</h6>
+                    <h6 onClick={() => addToCart(product)}>shop <span><h2>&gt;</h2></span></h6>
                   </div>
                   
                 </a>
@@ -48,8 +52,15 @@ function Products({products, addToCart}) {
           ))}  
 
       </ul>
+
+      
+
+
+
+
+
       <ul className='second-section'>
-        {firstThreeProduct.map((product) => (
+        {lastThreeProduct.map((product) => (
           <li key={product._id}>
             <div className='card'>
               <img src={product.image}  alt="product"/>
@@ -57,6 +68,25 @@ function Products({products, addToCart}) {
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
                 <button className='second-section-button' onClick={() => openModal(product)}>
+                  See Product
+                </button>
+              </div>
+            </div>
+
+          </li>
+        ))}
+      </ul>
+
+
+      <ul className='before-footer'>
+        {lastThreeProduct.map((product) => (
+          <li key={product._id}>
+            <div className={product.title+'card'}>
+              <img src={product.image}  alt="product"/>
+              <div className={product.title+'title'}>
+                <h3>{product.title}</h3>
+                <p>{product.description}</p>
+                <button className='' onClick={() => openModal(product)}>
                   See Product
                 </button>
               </div>
@@ -92,6 +122,7 @@ function Products({products, addToCart}) {
                             <div>{formatCurrency(product.price)}</div>
                             <button className='button primary'
                                 onClick={() => {
+                                  console.log(product)
                                     addToCart(product);
                                     createOrder(product)
                                     closeModal();

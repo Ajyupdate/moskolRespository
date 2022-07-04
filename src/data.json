@@ -19,7 +19,7 @@
       {
         "_id": "image3",
         "image": "/images/battery.jpg",
-        "title": "Battery",
+        "title": "Batteries",
         "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS, our universal brand is here for you, and comes in all our fit ranges: ASOS Curve, Tall, Petite and Maternity. Created by us, styled by you.",
         "availableSizes": ["X", "M", "L"],
         "price": 14.9
@@ -34,8 +34,8 @@
       },
       {
         "_id": "image5",
-        "image": "/images/smartGate.jpg",
-        "title": "Smart gate",
+        "image": "/images/smartGate.jpeg",
+        "title": "Smartgate",
         "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS, our universal brand is here for you, and comes in all our fit ranges: ASOS Curve, Tall, Petite and Maternity. Created by us, styled by you.",
         "availableSizes": ["X", "L", "XL"],
         "price": 10.9
@@ -75,7 +75,7 @@
       {
         "_id": "image5",
         "image": "/images/smartGate.jpg",
-        "title": "Smart gate",
+        "title": "Smartgate",
         "description": "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS, our universal brand is here for you, and comes in all our fit ranges: ASOS Curve, Tall, Petite and Maternity. Created by us, styled by you.",
         "availableSizes": ["X", "L", "XL"],
         "price": 10.9
