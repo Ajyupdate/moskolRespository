@@ -5,14 +5,16 @@ import Products from './Products';
 import Cart from './Cart';
 import { useState } from 'react';
 import Footer from './Footer';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom'
 import Cctv from './Cctv';
 import Inverters from './Inverters'
 import Batteries from './Batteries';
 
 
 
+
 function App() {
+  
   
   const [products, setProduct] = useState(data.products)
   const  [cartItems, setCartItems] = useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [])
@@ -42,7 +44,13 @@ function App() {
       cartItemss.push({...product, count: 1})
     }
     setCartItems(cartItemss)
-    localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    localStorage.setItem("cartItems", JSON.stringify(cartItemss))
+  }
+  const createOrder = (order) => {
+    alert("Need to save for " + order.name)
+
+
+    window.location.href = "/";
   }
   
   
@@ -66,7 +74,7 @@ function App() {
         </Route> 
 
         <Route path='/cart'>
-          <Cart removeFromCart={removeFromCart} cartItems={cartItems}/>    
+          <Cart createOrder={createOrder} removeFromCart={removeFromCart} cartItems={cartItems}/>    
         </Route>
 
         <Route path='/cctv'>
