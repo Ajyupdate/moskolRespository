@@ -6,9 +6,9 @@ import formatCurrency from './util'
 
 
 function Products({products, addToCart}) {
-  var firstThreeProduct = products.slice(0,3).map((product) => {
-    return product 
-  })
+  // var firstThreeProduct = products.slice(0,3).map((product) => {
+  //   return product 
+  // })
   var lastThreeProduct = products.slice(2,5).map((product) => {
     return product 
   })
@@ -33,7 +33,7 @@ function Products({products, addToCart}) {
   
   return (
     <div className="product">
-      <ul className='product-list'>
+      {/* <ul className='product-list'>
           {firstThreeProduct.map((product) =>(
             <li key={product._id}>
               <div className='single-product'>
@@ -51,7 +51,7 @@ function Products({products, addToCart}) {
               
           ))}  
 
-      </ul>
+      </ul> */}
 
       
 

@@ -31,10 +31,10 @@ function Header({products, addToCart}) {
 
             <div className="header-list">
                 <div>
-                    <p><a href='/'>Home</a></p>
+                    <p><a href='/'>HOME</a></p>
                     <p><a href='/cctv'>CCTV</a></p>
-                    <p><a href='/inverters'>Inverters</a></p>
-                    <p><a href='/batteries'>Batteries</a></p>
+                    <p><a href='/inverters'>INVERTERS</a></p>
+                    <p><a href='/batteries'>BATTERIES</a></p>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@ function Header({products, addToCart}) {
                         <h1 className='first-product-title'>{product.title}</h1>
                         <p className='description'>{product.description}</p>
                         {/* <button className='first-buy-button' onClick={() => addToCart(product)}> Buy Now</button> */}
-                        <button className='first-buy-button' onClick={() => openModal(product)}> See Product</button>
+                        <button  className='first-buy-button' onClick={() => openModal(product)}> See Product</button>
                         
                     </div>
 

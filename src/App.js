@@ -5,18 +5,20 @@ import Products from './Products';
 import Cart from './Cart';
 import { useState } from 'react';
 import Footer from './Footer';
-import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Cctv from './Cctv';
 import Inverters from './Inverters'
 import Batteries from './Batteries';
+import SecondBlock from './SecondBlock';
+import Nav from './Nav';
 
 
 
 
 function App() {
   
-  
-  const [products, setProduct] = useState(data.products)
+  const products = data.products
+  //const [products, setProduct] = useState(data.products)
   const  [cartItems, setCartItems] = useState(localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [])
 
   function removeFromCart(product){
@@ -59,12 +61,13 @@ function App() {
   return (
     <Router>
     <div className="App" > 
+    {/* <Nav/> */}
       <header>
         <Switch> 
         {/* <Filter filterProducts={filterProducts} sortProducts={sortProducts} size={size} sort={sort} count={products.length}/> */}
         <Route exact path="/"> 
           <Header products={products} addToCart={addToCart}/>
-        
+          <SecondBlock products={products} addToCart={addToCart}/>
         
         <Products products={products} addToCart={addToCart}/>
        
