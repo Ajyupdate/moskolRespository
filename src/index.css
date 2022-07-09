@@ -60,7 +60,8 @@ a{
 .first-product{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 2em;
+  margin-top: 5em;
+  margin-bottom: 5em;
   
 }
 .first-product-text{
@@ -69,7 +70,7 @@ a{
   flex-direction: column;
   justify-content: center;
   
-  padding-right: 2em;
+  /* padding-right: 2em; */
 }
 .first-product-image img{
   display: flex;
@@ -77,7 +78,10 @@ a{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 5em;
+  /* padding-bottom: 5em;
+  padding-top: 1em; */
+  /* padding-left: 5em; */
+  padding: 2em;
 }
 .first-buy-button{
   background-color: rgb(215, 124, 73);
@@ -91,6 +95,7 @@ a{
 } */
 
 .secondBlock{
+  
   max-width: 65em;
   margin: auto;
   
@@ -98,6 +103,7 @@ a{
 
 }
 .secondBlock img{
+
   width: 201.91px;
   /* max-height: 13.5rem;
 	max-width: 60%; */
@@ -123,7 +129,7 @@ a{
   width: 100%; 
 	text-align: center;
 	position: relative;
-
+  margin-top: 10em;
 }
 .title-and-shop{
   color: black;
