@@ -71,7 +71,7 @@ function App() {
         
         <Products products={products} addToCart={addToCart}/>
        
-        <Cart removeFromCart={removeFromCart} cartItems={cartItems}/>  
+        
         
         <Footer/>
         </Route> 

@@ -152,10 +152,14 @@ a{
 
 
 .product{
-  padding-top: 5em;
-  margin: auto;
+  /* padding-top: 5em; */
+  /* margin: 3em; */
+  margin-top: 5em;
+  margin-left: 2.5em;
+  margin-right: 5em;
   padding: 0 2rem; 
-  max-width: 65em;
+  max-width: 70em;
+  
   
 }
 .product-list{
@@ -208,21 +212,54 @@ a{
 }
 .card{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-gap: 2rem; */
   background: #f1f1f1;
   margin-bottom: 2rem;
   color: black;
+  /* margin: auto; */
+  /* padding: 0 2rem;  */
+  max-width: 65em;
+  border-radius: 0.5em;
 }
-.second-section{
+.Batteriesproduct, .Panelproduct, .Smartgateproduct{
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(2, 1fr);
+  background-color: rgb(143, 74, 37);
+  margin-bottom: 2rem;
+  color: black;
+  max-width: 65em;
+  border-radius: 0.5em;
+  padding: 5em;    
+}
+.Panelproduct{
+  background-color: rgb(241, 241, 241);
+}
+.Batteriesproduct img{
+  width: 50%;
+  text-align: center; 
+}
+.Panelproduct img{
+  width: 50%;
+  text-align: center; 
+}
+.Smartgateproduct img{
+  width: 50%;
+  text-align: center; 
+}
+
+/* .second-section{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 3em;
   margin: auto;
-  max-width: 50em;
-}
+  max-width: 65em;
+  
+} */
 .card img{
   width: 11em;
   padding: 7em;
@@ -232,7 +269,7 @@ a{
 }
 
 .card > div{
-  padding: 2rem;
+  padding: 1rem;
 }
 .second-section-button{
   padding: 5px;
@@ -284,7 +321,7 @@ a{
   align-items: center;
   padding: 3em;
   margin: auto;
-  max-width: 50em;
+  max-width: 65em;
 }
 .before-footer img{
   width: 11em;

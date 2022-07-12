@@ -33,36 +33,12 @@ function Products({products, addToCart}) {
   
   return (
     <div className="product">
-      {/* <ul className='product-list'>
-          {firstThreeProduct.map((product) =>(
-            <li key={product._id}>
-              <div className='single-product'>
-                <a href={product.title}>
-                  <img src={product.image} alt="product list"/>
-                  <div className="title-and-shop">
-                    <h3>{product.title}</h3>
-                    <h6 onClick={() => addToCart(product)}>shop <span><h2>&gt;</h2></span></h6>
-                  </div>
-                  
-                </a>
-                
-              </div>
-            </li>
-              
-          ))}  
-
-      </ul> */}
-
       
-
-
-
-
 
       <ul className='second-section'>
         {lastThreeProduct.map((product) => (
           <li key={product._id}>
-            <div className='card'>
+            <div className={product.title+'product'}>
               <img src={product.image}  alt="product"/>
               <div>
                 <h3>{product.title}</h3>
@@ -78,7 +54,7 @@ function Products({products, addToCart}) {
       </ul>
 
 
-      <ul className='before-footer'>
+      {/* <ul className='before-footer'>
         {lastThreeProduct.map((product) => (
           <li key={product._id}>
             <div className={product.title+'card'}>
@@ -94,7 +70,7 @@ function Products({products, addToCart}) {
 
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {product && (
         <Modal  isOpen={true} onRequestClose={closeModal}>
