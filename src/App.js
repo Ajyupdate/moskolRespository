@@ -10,7 +10,8 @@ import Cctv from './Cctv';
 import Inverters from './Inverters'
 import Batteries from './Batteries';
 import SecondBlock from './SecondBlock';
-import Nav from './Nav';
+
+import LastRow from './LastRow';
 
 
 
@@ -71,7 +72,7 @@ function App() {
         
         <Products products={products} addToCart={addToCart}/>
        
-        
+        <LastRow products={products}/>
         
         <Footer/>
         </Route> 

@@ -85,10 +85,15 @@ a{
 }
 .first-buy-button{
   background-color: rgb(215, 124, 73);
-  width: 10em;
-  height: 2em;
+  /* width: 10em;
+  height: 2em; */
   outline: none;
   border: none;
+  padding: 1.4rem 2.4rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  /* width: 5em; */
 }
 /* .description{
   width: 20em;
@@ -223,7 +228,7 @@ a{
   max-width: 65em;
   border-radius: 0.5em;
 }
-.Batteriesproduct, .Panelproduct, .Smartgateproduct{
+.Batteriesproduct, .Panelproduct{
   display: grid;
   /* grid-template-columns: 1fr 1fr; */
   grid-template-columns: repeat(2, 1fr);
@@ -234,8 +239,55 @@ a{
   border-radius: 0.5em;
   padding: 5em;    
 }
+.Panelproduct:nth-child(odd) img{
+  order: 2;
+}
 .Panelproduct{
   background-color: rgb(241, 241, 241);
+}
+/* .Smartgateproduct{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  margin-bottom: 2rem;
+  color: black;
+  max-width: 65em;
+  border-radius: 0.5em;
+  padding: 5em;    
+} */
+.Smartgateproduct{
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  color: black;
+}
+.Smartgateimg{
+  border-radius: 0.5em;
+  background-color: black;
+}
+.Smartgatedescription{
+  background: rgb(241, 241, 241);
+  padding: 2em;
+  border-radius: 0.5em;
+} 
+.Batteriesbtn{
+  cursor: pointer;
+  background: black;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 1.4rem 2.4rem;
+  text-transform: uppercase;
+}
+.Panelbtn, .Smartgatebtn{
+  cursor: pointer;
+  background: transparent;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 1.4rem 2.4rem;
+  text-transform: uppercase;
+  
 }
 .Batteriesproduct img{
   width: 50%;
@@ -243,13 +295,20 @@ a{
 }
 .Panelproduct img{
   width: 50%;
-  text-align: center; 
+  margin-left: 6em;
+ 
+  /* text-align: center;  */
 }
 .Smartgateproduct img{
+  margin: 7em;
   width: 50%;
   text-align: center; 
+  border-radius: 0.5em;
 }
-
+/* .Smartgatedescription{
+  background: rgb(241, 241, 241);
+  padding: 5em;
+} */
 /* .second-section{
   display: flex;
   flex-wrap: wrap;
@@ -325,4 +384,19 @@ a{
 }
 .before-footer img{
   width: 11em;
+}
+.lastProduct{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 65em;
+  grid-gap: 2rem;
+  color: black;
+  margin: auto;
+  margin-top: 10em;
+  margin-bottom: 5em;
+}
+.lastProduct img{
+  width: 100%;
+  border-radius: 0.5em;
+  
 }

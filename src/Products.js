@@ -39,11 +39,11 @@ function Products({products, addToCart}) {
         {lastThreeProduct.map((product) => (
           <li key={product._id}>
             <div className={product.title+'product'}>
-              <img src={product.image}  alt="product"/>
-              <div>
+              <div className={product.title+'img'}><img src={product.image}  alt="product"/></div>
+              <div className={product.title+'description'}>
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
-                <button className='second-section-button' onClick={() => openModal(product)}>
+                <button className={product.title+'btn'} onClick={() => openModal(product)}>
                   See Product
                 </button>
               </div>
