@@ -3,7 +3,8 @@ import React from 'react'
 function Nav() {
   return (
     <div className='header-container'>
-        <div className='nav header'>
+        <div className='header'>
+        <div className='nav'>
             <div >
                 Moskol Engineering
             </div>
@@ -21,6 +22,9 @@ function Nav() {
                 <i className="fas fa-shopping-cart"></i>
             </div>
         </div>
+
+        </div>
+        
     </div>
   )
 }

@@ -60,8 +60,8 @@ a{
 .first-product{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 5em;
-  margin-bottom: 5em;
+  /* margin-top: 5em;
+  margin-bottom: 5em; */
   
 }
 .first-product-text{
