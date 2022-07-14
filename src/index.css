@@ -48,6 +48,7 @@ a{
   color: rgb(215, 124, 73)
 } 
 
+
 .new-product{
   letter-spacing: 0.5rem;
   font-size: medium;
@@ -60,8 +61,8 @@ a{
 .first-product{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 5em;
-  margin-bottom: 5em;
+  /* margin-top: 5em;
+  margin-bottom: 5em; */
   
 }
 .first-product-text{
@@ -333,21 +334,41 @@ a{
 .second-section-button{
   padding: 5px;
 }
-.footer{
+.footer-wrapper{
   background-color: black;
+}
+
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  padding: 0 2em;
+  grid-gap: 2rem;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  width: 65em;
+  /* background-color: black;
   display: grid;
   grid-gap: 8rem;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
-  padding-left: 4em;
-  padding-top: 2em;
-  padding-right: 6em;
-  padding-bottom: 3em;
+  padding-left: 6em;
+  padding-top: 4em;
+  padding-right: 7em;
+  padding-bottom: 3em; */
+  
 }
 .footer-links{
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  transition: 1s;
+}
+.footer-links a:hover{
+  color: rgb(215, 124, 73)
+}
+.footer-links a:active{
+  background-color: red;
 }
 .social-media-icon{
   display: flex;

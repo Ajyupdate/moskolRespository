@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import Zoom from 'react-reveal/Zoom'
-import Cart from './Cart'
+
 import formatCurrency from './util'
 
 

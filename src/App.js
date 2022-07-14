@@ -12,6 +12,7 @@ import Batteries from './Batteries';
 import SecondBlock from './SecondBlock';
 
 import LastRow from './LastRow';
+import Nav from './Nav';
 
 
 
@@ -64,6 +65,7 @@ function App() {
     <div className="App" > 
     {/* <Nav/> */}
       <header>
+        <Nav/>
         <Switch> 
         {/* <Filter filterProducts={filterProducts} sortProducts={sortProducts} size={size} sort={sort} count={products.length}/> */}
         <Route exact path="/"> 
