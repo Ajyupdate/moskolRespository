@@ -2,8 +2,8 @@ import React from 'react'
 
 function Nav() {
   return (
-    <div className='header-container'>
-        <div className='header'>
+    <div className='nav-header'>
+        
         <div className='nav'>
             <div >
                 Moskol Engineering
@@ -23,7 +23,7 @@ function Nav() {
             </div>
         </div>
 
-        </div>
+        
         
     </div>
   )

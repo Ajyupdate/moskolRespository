@@ -64,7 +64,7 @@ function App() {
     <Router>
     <div className="App" > 
     {/* <Nav/> */}
-      <header>
+      
         <Nav/>
         <Switch> 
         {/* <Filter filterProducts={filterProducts} sortProducts={sortProducts} size={size} sort={sort} count={products.length}/> */}
@@ -76,7 +76,6 @@ function App() {
        
         <LastRow products={products}/>
         
-        <Footer/>
         </Route> 
 
         <Route path='/cart'>
@@ -98,9 +97,9 @@ function App() {
         
         </Switch> 
         
-      </header> 
       
       
+      <Footer/>
     </div>
     </Router>
   );

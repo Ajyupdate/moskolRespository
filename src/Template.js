@@ -13,14 +13,14 @@ function Template({products, title}) {
          <p>New Product</p>
             
             {filteredProduct.map((cctvProduct) =>(
-                <div key={cctvProduct._id}>
-                    <div><img src={cctvProduct.image}  alt='products'/> </div>
-                    <div>
-                        <p>New Product</p>
-                        <h2>{cctvProduct.title}</h2>
-                        <p>{cctvProduct.description}</p>
-                        <button>1</button> <button>Add To Cart</button>
-                    </div>
+                <div className="link-content" key={cctvProduct._id}>
+                  <div className="template-image"><img src={cctvProduct.image}  alt='products'/> </div>
+                  <div>
+                      
+                    <h2>{cctvProduct.title}</h2>
+                    <p>{cctvProduct.description}</p>
+                    <button>1</button> <button>Add To Cart</button>
+                  </div>
                 
                 </div>
                 

@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background: transparent;
 }
 a{
   text-decoration: none;
@@ -17,6 +18,7 @@ a{
     color: white;
 }
 .header-container{
+  
   background-color: black;
 }
 .header{
@@ -29,14 +31,23 @@ a{
 /* .nav{
   position: relative;
 } */
+.nav-header{
+  background-color: black;
+}
 .nav{
   display:flex;
   justify-content: space-between;
   border-bottom: 0.1px solid white;
   padding: 2rem;
-  position: sticky;
+  margin: auto;
+  /* z-index: 3000; */
+  
+  width: 65rem;
+  /* position: fixed; 
   top: 0;
-  background-color: black;
+  left: 0px;
+  right: 0px; */
+  
 }
 .header-list p{
   display: inline;
@@ -377,9 +388,33 @@ a{
   padding-left: 25em;
 }
 .cctv{
-  background-color: red;
+ background-color: black;
+ text-align: center;
+ padding: 1em;
+ font-size: 5rem;
+ 
 }
+.link-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: black;
+  width: 65em;
+  margin: auto;
+  padding: 0 2em;
+  grid-gap: 5rem;
+  margin-top: 5em;
+  
+}
+.template-image{
 
+ 
+  background: rgb(241, 241, 241);
+}
+.template-image img{
+  height: 10em;
+  width: 10em;
+  padding: 2em;
+}
 .Batteriescard  {
   display: grid;
   grid-template-columns: 1fr 1fr;
